@@ -16,21 +16,21 @@ The interfaces defined in PSR-7 are the following:
 
 ## `Psr\Http\Message\MessageInterface` Methods
 
-| Method Name                        | Description | Notes |
-|------------------------------------| ----------- | ----- |
-| `getProtocolVersion()`             | Retrieve HTTP protocol version          |  1.0 or 1.1 |
-| `withProtocolVersion($version)`    | Returns new message instance with given HTTP protocol version          |      |
-| `getHeaders()`                     | Retrieve all HTTP Headers               | [Request Header List](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields), [Response Header List](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields)      |
-| `hasHeader($name)`                 | Checks if HTTP Header with given name exists  | |
-| `getHeader($name)`                 | Retrieves a array with the values for a single header | |
-| `getHeaderLine($name)`             | Retrieves a comma-separated string of the values for a single header |  |
-| `withHeader($name, $value)`        | Returns new message instance with given HTTP Header | if the header existed in the original instance, replaces the header value from the original message with the value provided when creating the new instance. |
-| `withAddedHeader($name, $value)`   | Returns new message instance with appended value to given header | If header already exists value will be appended, if not a new header will be created |
-| `withoutHeader($name)`             | Removes HTTP Header with given name| |
-| `getBody()`                        | Retrieves the HTTP Message Body | Returns object implementing `StreamInterface`|
-| `withBody(StreamInterface $body)`  | Returns new message instance with given HTTP Message Body | |
+| Method Name                                   | Description                                                      | Notes |
+|-----------------------------------------------|------------------------------------------------------------------| ----- |
+| `getProtocolVersion(): string`                | Retrieve HTTP protocol version                                   |  1.0 or 1.1 |
+| `withProtocolVersion(string $version): static` | Returns new message instance with given HTTP protocol version    |      |
+| `getHeaders(): array`                         | Retrieve all HTTP Headers                                        | [Request Header List](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields), [Response Header List](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields)      |
+| `hasHeader(string $name): bool`               | Checks if HTTP Header with given name exists                     | |
+| `getHeader(string $name): array`              | Retrieves a array with the values for a single header            | |
+| `getHeaderLine(string`|`array $name): string`                                            | Retrieves a comma-separated string of the values for a single header |  |
+| `withHeader(string $name, $value)`            | Returns new message instance with given HTTP Header              | if the header existed in the original instance, replaces the header value from the original message with the value provided when creating the new instance. |
+| `withAddedHeader($name, $value)`              | Returns new message instance with appended value to given header | If header already exists value will be appended, if not a new header will be created |
+| `withoutHeader($name)`                        | Removes HTTP Header with given name                              | |
+| `getBody()`                                   | Retrieves the HTTP Message Body                                  | Returns object implementing `StreamInterface`|
+| `withBody(StreamInterface $body)`             | Returns new message instance with given HTTP Message Body        | |
 
-
+string\|array
 ## `Psr\Http\Message\RequestInterface` Methods
 
 Same methods as `Psr\Http\Message\MessageInterface`  + the following methods:
