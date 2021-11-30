@@ -1,6 +1,8 @@
 PSR Http Message
 ================
 
+- Switch to PHP 8.1 support
+
 This repository holds all interfaces/classes/traits related to
 [PSR-7](http://www.php-fig.org/psr/psr-7/).
 

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 2.0.0 - 2021-11-29
+
+## Added
+- PHP 8.1 support
+
+## Removed
+- support before PHP 8.1 
+
 ## 1.0.1 - 2016-08-06
 
 ### Added
