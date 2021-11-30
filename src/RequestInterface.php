@@ -2,8 +2,6 @@
 
 namespace Inwebo\Http\Message;
 
-use \InvalidArgumentException as InvalidArgumentException;
-
 /**
  * Representation of an outgoing, client-side request.
  *
@@ -60,7 +58,7 @@ interface RequestInterface extends MessageInterface
      * @param mixed $requestTarget
      * @return static
      */
-    public function withRequestTarget($requestTarget): static;
+    public function withRequestTarget(mixed $requestTarget): static;
 
     /**
      * Retrieves the HTTP method of the request.
@@ -82,7 +80,7 @@ interface RequestInterface extends MessageInterface
      *
      * @param string $method Case-sensitive method.
      * @return static
-     * @throws InvalidArgumentException for invalid HTTP methods.
+     * @throws \InvalidArgumentException for invalid HTTP methods.
      */
     public function withMethod(string $method): static;
 

@@ -82,7 +82,7 @@ interface ServerRequestInterface extends RequestInterface
      * @param array $cookies Array of key/value pairs representing cookies.
      * @return static
      */
-    public function withCookieParams(array $cookies): ServerRequestInterface;
+    public function withCookieParams(array $cookies): static;
 
     /**
      * Retrieve query string arguments.
@@ -120,7 +120,7 @@ interface ServerRequestInterface extends RequestInterface
      *     $_GET.
      * @return static
      */
-    public function withQueryParams(array $query): ServerRequestInterface;
+    public function withQueryParams(array $query): static;
 
     /**
      * Retrieve normalized file upload data.
@@ -147,7 +147,7 @@ interface ServerRequestInterface extends RequestInterface
      * @return static
      * @throws \InvalidArgumentException if an invalid structure is provided.
      */
-    public function withUploadedFiles(array $uploadedFiles): ServerRequestInterface;
+    public function withUploadedFiles(array $uploadedFiles): static;
 
     /**
      * Retrieve any parameters provided in the request body.
@@ -194,7 +194,7 @@ interface ServerRequestInterface extends RequestInterface
      * @throws \InvalidArgumentException if an unsupported argument type is
      *     provided.
      */
-    public function withParsedBody(null|array|object $data): ServerRequestInterface;
+    public function withParsedBody(null|array|object $data): static;
 
     /**
      * Retrieve attributes derived from the request.
@@ -224,7 +224,7 @@ interface ServerRequestInterface extends RequestInterface
      * @param mixed $default Default value to return if the attribute does not exist.
      * @return mixed
      */
-    public function getAttribute(string $name, $default = null): ServerRequestInterface;
+    public function getAttribute(string $name, mixed $default): static;
 
     /**
      * Return an instance with the specified derived request attribute.
